@@ -151,6 +151,7 @@ body {
 }
 
 .side-nav__sub-menu {
+    display: none;
     position: absolute;
     top: 0; left: 100%;
     min-width: 25rem;
@@ -158,13 +159,11 @@ body {
     list-style: none;
     box-shadow: var(--shadow-dark);
 
-    opacity: 0;
-    transition: all .5 ease-in-out;
     z-index: 999;
 }
 
 .side-nav__sub-menu.active {
-    opacity: 1;
+    display: block;
 }
 
 .side-nav__sub-menu--item a {
