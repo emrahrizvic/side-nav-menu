@@ -47,8 +47,8 @@
                         <span>Project statistics</span>
                     </a>
                 </li>
-                <li class="side-nav__item">
-                    <a href="#" class="side-nav__link side-nav__dropdown">
+                <li class="side-nav__item side-nav__dropdown">
+                    <a href="#" class="side-nav__link">
                         <i class="icon ion-md-people side-nav__icon"></i>
                         <span>Team members</span>
                         <i class="icon ion-md-arrow-dropright side-nav__dropdown-icon"></i>
@@ -131,10 +131,10 @@
             e.preventDefault();
             $('.icon.ion-md-arrow-dropright').toggle();
             $('.icon.ion-md-arrow-dropleft').toggle();
-            $(".side-nav__item.side-nav__dropdown").toggleClass("side-nav__item--active");
+            $(".side-nav__dropdown").toggleClass("side-nav__item--active");
             $(".side-nav__sub-menu").toggleClass("active");
 
-            console.log('Clicked');
+            // console.log('Clicked!');
 
         });
     </script>
