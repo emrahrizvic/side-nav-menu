@@ -10,6 +10,11 @@
     <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/circle.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -43,10 +48,34 @@
                     </a>
                 </li>
                 <li class="side-nav__item">
-                    <a href="#" class="side-nav__link">
+                    <a href="#" class="side-nav__link side-nav__dropdown">
                         <i class="icon ion-md-people side-nav__icon"></i>
                         <span>Team members</span>
+                        <i class="icon ion-md-arrow-dropright side-nav__dropdown-icon"></i>
+                        <i class="icon ion-md-arrow-dropleft side-nav__dropdown-icon"></i>
                     </a>
+
+
+                    <ul class="side-nav__sub-menu">
+                        <li class="side-nav__sub-menu--item">
+                            <a href="#">
+                                <i class="icon ion-md-person side-nav__icon"></i>
+                                <span>First member</span>
+                            </a>
+                        </li>
+                        <li class="side-nav__sub-menu--item">
+                            <a href="#">
+                                <i class="icon ion-md-person side-nav__icon"></i>
+                                <span>Second member</span>
+                            </a>
+                        </li>
+                        <li class="side-nav__sub-menu--item">
+                            <a href="#">
+                                <i class="icon ion-md-person side-nav__icon"></i>
+                                <span>Third member</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="side-nav__item">
                     <a href="#" class="side-nav__link">
@@ -80,7 +109,9 @@
                     </div>
                 </div>
 
-                &copy; 2019 by Emrah Rizvić. All rights reserved.
+                &copy; <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                  </script> by Emrah Rizvić. All rights reserved.
             </div>
         </nav>
         <!-- Sidebar Navigation END -->
@@ -91,6 +122,22 @@
         </main>
         <!-- Main Content END -->
     </div>
+
+    <script>
+        $('.icon.ion-md-arrow-dropleft').hide();
+
+        $('.side-nav__dropdown').click(function(e) {
+    
+            e.preventDefault();
+            $('.icon.ion-md-arrow-dropright').toggle();
+            $('.icon.ion-md-arrow-dropleft').toggle();
+            $(".side-nav__item.side-nav__dropdown").toggleClass("side-nav__item--active");
+            $(".side-nav__sub-menu").toggleClass("active");
+
+            console.log('Clicked');
+
+        });
+    </script>
 
 
 </body>

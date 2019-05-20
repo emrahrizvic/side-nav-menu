@@ -137,13 +137,51 @@ body {
     fill: currentColor; 
 }
 
+.side-nav__dropdown-icon {
+    margin-left: 3rem;
+}
+
 .side-nav__label {
     font-size: 1rem;
-    margin-left: 1rem;
+    margin-left: 3rem;
     padding: .2rem .8rem;
     border-radius: 1rem;
     color: var(--color-primary-light);
     background-color: var(--color-grey-light-3);
+}
+
+.side-nav__sub-menu {
+    position: absolute;
+    top: 0; left: 100%;
+    min-width: 25rem;
+    background-color: var(--color-grey-dark-2);
+    list-style: none;
+    box-shadow: var(--shadow-dark);
+
+    opacity: 0;
+    transition: all .5 ease-in-out;
+    z-index: 999;
+}
+
+.side-nav__sub-menu.active {
+    opacity: 1;
+}
+
+.side-nav__sub-menu--item a {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.side-nav__sub-menu--item a:hover {
+    background-color: var(--color-grey-dark-1);
 }
 
 .footer {
